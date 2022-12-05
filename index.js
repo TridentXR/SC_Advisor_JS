@@ -30,6 +30,7 @@ for (const file of commandFiles) {
 // Connections
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
+  client.user.setActivity("/help | Made By LeviathanStatus");
 });
 
 client.on('messageCreate', async (msg) => {
@@ -96,10 +97,10 @@ client.on(Events.InteractionCreate, async interaction => {
 client.on(Events.InteractionCreate, interaction => {
 	if (!interaction.isButton()) return;
 
-    if (interaction.customId === 'primary') {
-        interaction.reply("Test");
-    } else if (interaction.customId === 'secondary') {
-        interaction.reply("Don't Test");
+    if (interaction.customId === 'confirm') {
+        console.log('yey');
+    } else if (interaction.customId === 'deny') {
+        console.log('nay');
     }
 });
 
