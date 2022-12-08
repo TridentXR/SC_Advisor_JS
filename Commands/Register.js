@@ -48,7 +48,7 @@ module.exports = {
             collector.on('collect', i => {
                 if (i.user.id === interaction.user.id) {
                     if (i.customId === 'confirm') {
-                        var newList = {Handle: data.profile.handle, ProfileURL: data.profile.page.url, UserID: i.user.id}
+                        var newList = {Handle: data.profile.handle, ProfileURL: data.profile.page.url, UserID: i.user.id, DateOfReg: data.profile.enlisted, Fluency: data.profile.fluency[0], ProfilePicture: data.profile.image}
                         interaction.followUp("Thank you for confirming! To continue, please run the following command: `/Agreement`");
 
                         const row = new ActionRowBuilder()
